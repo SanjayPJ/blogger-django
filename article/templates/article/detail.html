@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block body_block %}
+    <div class="card mt-2">
+        <div class="card-header">
+            {% if articles.thumb %}
+                <img class="img-fluid rounded mb-4" src="{{ articles.thumb.url }}">
+            {% endif %}
+            <h5><b>{{ articles.title }}</b></h5>
+            <span class="text-muted"><small>{{ articles.date }}</small></span>
+            <span class="float-right">
+                <a class="text-white btn btn-sm btn-danger" href="/delete/{{ articles.slug }}">Delete</a>
+            </span>       
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{ articles.body }}</p>
+        </div>
+    </div>
+{% endblock body_block %}

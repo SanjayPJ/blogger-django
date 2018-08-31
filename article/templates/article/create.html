@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block body_block %}
+<div class="card mt-2" >
+        <div class="card-header">
+          <h4>Create</h4>
+        </div>
+        <div class="card-body">
+          <form action="" method="POST" enctype="multipart/form-data">
+            {{ create_form.as_p }}
+            {% csrf_token %}
+            <button class="btn btn-primary w-100" type="submit">Submit</button>
+            <script>
+                $("input").addClass("form-control")
+                $("textarea").addClass("form-control")
+            </script>
+          </form>
+        </div>
+      </div>
+{% endblock body_block %}

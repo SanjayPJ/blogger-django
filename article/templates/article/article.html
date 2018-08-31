@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block body_block %}
+    {% for article in articles %}
+    <div class="card mt-2">
+        <div class="card-header">
+            <h5><b><a href="{{ article.slug }}">{{ article.title }}</a></b></h5>
+            <div class="text-muted"><small>{{ article.date }}</small></div>       
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{ article.snippet }}</p>
+            <a class="btn btn-primary btn-sm" href="{{ article.slug }}">Read more >>></a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock body_block %}
